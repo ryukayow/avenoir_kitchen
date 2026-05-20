@@ -16,7 +16,7 @@ class KategoriMenuSeeder extends Seeder
         $data = ['Mie Ayam', 'Spaghetti', 'Side Dish', 'Minuman'];
 
         foreach ($data as $nama) {
-            KategoriMenu::create(['nama_kategori' => $nama]);
+            KategoriMenu::firstOrCreate(['nama_kategori' => $nama]);
         }
     }
 }

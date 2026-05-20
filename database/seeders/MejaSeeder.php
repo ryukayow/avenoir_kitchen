@@ -14,7 +14,7 @@ class MejaSeeder extends Seeder
         ];
 
         foreach ($meja as $m) {
-            Meja::create($m);
+            Meja::firstOrCreate(['nomor_meja' => $m['nomor_meja']], $m);
         }
     }
 }

@@ -23,7 +23,7 @@ class MenuSeeder extends Seeder
         ];
 
         foreach ($menu as $m) {
-            Menu::create($m);
+            Menu::firstOrCreate(['nama_menu' => $m['nama_menu']], $m);
         }
     }
 }

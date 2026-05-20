@@ -10,25 +10,31 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        User::create([
-            'nama' => 'Admin 1',
-            'username' => 'admin1',
-            'password' => Hash::make('admin123'),
-            'role' => 'admin',
-        ]);
+        User::firstOrCreate(
+            ['username' => 'admin1'],
+            [
+                'nama' => 'Admin 1',
+                'password' => Hash::make('admin123'),
+                'role' => 'admin',
+            ]
+        );
 
-        User::create([
-            'nama' => 'Admin 2',
-            'username' => 'admin2',
-            'password' => Hash::make('admin123'),
-            'role' => 'admin',
-        ]);
+        User::firstOrCreate(
+            ['username' => 'admin2'],
+            [
+                'nama' => 'Admin 2',
+                'password' => Hash::make('admin123'),
+                'role' => 'admin',
+            ]
+        );
 
-        User::create([
-            'nama' => 'Koki Utama',
-            'username' => 'koki',
-            'password' => Hash::make('koki123'),
-            'role' => 'koki',
-        ]);
+        User::firstOrCreate(
+            ['username' => 'koki'],
+            [
+                'nama' => 'Koki Utama',
+                'password' => Hash::make('koki123'),
+                'role' => 'koki',
+            ]
+        );
     }
 }
