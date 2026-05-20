@@ -34,7 +34,7 @@ class AdminMejaController extends Controller
             'qr_code'    => '',
         ]);
 
-        $urlMenu  = config('app.url') . '/menu/' . $meja->id_meja;
+        $urlMenu  = url('/') . '/menu/' . $meja->id_meja;
         $namaFile = 'meja-' . $meja->id_meja . '.svg';
         $savePath = public_path('assets/qrcode/' . $namaFile);
 
